@@ -1,19 +1,28 @@
 package hello;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
-@RestController
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+@Controller
 public class AgentController {
 
     @Autowired
 
     private AgentRepository agentRepo;
 
-    @RequestMapping("/")
-    public @ResponseBody Iterable<Agent> getAllAgents(){
+//    @GetMapping(path = "/add")
+//    public @ResponseBody String addNewAgent(@RequestParam Integer code,@RequestParam String name, @RequestParam String area){
+//        Agents a = new Agents();
+//        a.setCode(code);
+//        a.setName(name);
+//        a.setArea(area);
+//        agentRepo.save(a);
+//
+//        return "Saved!";
+//    }
+    @GetMapping(path = "/agents")
+    public @ResponseBody Iterable<Agents> getAllAgents(){
         return agentRepo.findAll();
     }
-
 }
