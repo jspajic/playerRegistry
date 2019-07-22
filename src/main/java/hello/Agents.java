@@ -9,12 +9,12 @@ import javax.persistence.Id;
 public class Agents {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer code;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int code;
     private String name;
     private String area;
 
-    public Integer getCode() {
+    public int getCode() {
         return code;
     }
 

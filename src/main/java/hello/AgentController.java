@@ -1,28 +1,38 @@
 package hello;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+
+@RestController
+@RequestMapping("/api")
 public class AgentController {
 
     @Autowired
-
     private AgentRepository agentRepo;
 
-//    @GetMapping(path = "/add")
-//    public @ResponseBody String addNewAgent(@RequestParam Integer code,@RequestParam String name, @RequestParam String area){
-//        Agents a = new Agents();
-//        a.setCode(code);
-//        a.setName(name);
-//        a.setArea(area);
-//        agentRepo.save(a);
-//
-//        return "Saved!";
-//    }
-    @GetMapping(path = "/agents")
-    public @ResponseBody Iterable<Agents> getAllAgents(){
+    //create
+    @PostMapping("/agent") Agents createAgent(@RequestBody Agents agent){
+        return agentRepo.save(agent);
+    }
+
+    //read
+    @GetMapping("/")
+    public Iterable<Agents> getAllAgents(){
         return agentRepo.findAll();
     }
+
+    //update
+    @PutMapping("/agent") Agents updateAgent(@RequestBody Agents agent){
+        return agentRepo.save(agent);
+    }
+
+    //delete
+    @DeleteMapping("/agent/{id}") void deleteAgent(@PathVariable Integer id){
+        agentRepo.deleteById(id);
+    }
+
+
 }
