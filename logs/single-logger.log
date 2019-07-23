@@ -1,0 +1,8 @@
+2019-07-23 10:35:21,752 INFO org.springframework.boot.StartupInfoLogger Starting Application on ivanob-pc with PID 7760 (C:\Users\jspajic\IdeaProjects\helloWorld\target\classes started by jspajic in C:\Users\jspajic\IdeaProjects\helloWorld)
+2019-07-23 10:35:21,774 DEBUG org.springframework.boot.StartupInfoLogger Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-23 10:35:21,776 INFO org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2019-07-23 10:35:41,302 INFO org.springframework.boot.StartupInfoLogger Started Application in 21.812 seconds (JVM running for 23.667)
+2019-07-23 10:37:45,582 INFO org.springframework.boot.StartupInfoLogger Starting Application on ivanob-pc with PID 15060 (C:\Users\jspajic\IdeaProjects\helloWorld\target\classes started by jspajic in C:\Users\jspajic\IdeaProjects\helloWorld)
+2019-07-23 10:37:45,588 DEBUG org.springframework.boot.StartupInfoLogger Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-23 10:37:45,596 INFO org.springframework.boot.SpringApplication No active profile set, falling back to default profiles: default
+2019-07-23 10:38:02,278 INFO org.springframework.boot.StartupInfoLogger Started Application in 18.827 seconds (JVM running for 20.375)
