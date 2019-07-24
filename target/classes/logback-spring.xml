@@ -83,7 +83,7 @@
     </root>
 
     <!-- LOG "hello.*" at $level -->
-    <logger name="hello.AgentController" level="trace" additivity="false">
+    <logger name="hello.*" level="trace" additivity="false">
         <appender-ref ref="RollingFile" />
         <appender-ref ref="Console" />
         <appender-ref ref="CodeRedRollingFile"/>

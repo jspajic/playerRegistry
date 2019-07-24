@@ -2,13 +2,13 @@ package hello;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/")
 public class AgentController {
+
 
     @Autowired
     private AgentRepository agentRepo;
@@ -18,8 +18,10 @@ public class AgentController {
         return agentRepo.save(agent);
     }
 
+
     //read
     @GetMapping("/")
+    @CrossOrigin(origins = "http://localhost:4000")
     public Iterable<Agents> getAllAgents(){
         return agentRepo.findAll();
     }
@@ -30,6 +32,7 @@ public class AgentController {
     }
 
     //delete
+    @CrossOrigin(origins = "http://localhost:4000")
     @DeleteMapping("/agent/{id}") void deleteAgent(@PathVariable Integer id){
         agentRepo.deleteById(id);
     }
