@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/")
@@ -37,5 +39,8 @@ public class AgentController {
         agentRepo.deleteById(id);
     }
 
-
+    @GetMapping("/agent/{id}")
+    Optional<Agents> findAgentWithID(@PathVariable Integer id){
+        return agentRepo.findById(id);
+    }
 }
