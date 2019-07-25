@@ -1,4 +1,4 @@
-package hello;
+package hello.config;
 
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

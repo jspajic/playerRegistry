@@ -1,4 +1,4 @@
-package hello;
+package hello.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity //Hibernate na osnovu ovoga pravi tablicu u bazi
-public class Agents {
+public class Agent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
