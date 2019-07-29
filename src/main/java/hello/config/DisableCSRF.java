@@ -11,11 +11,6 @@ public class DisableCSRF extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .authorizeRequests()
-                .antMatchers(HttpMethod.OPTIONS,"/agent/*").permitAll()//allow CORS option calls
-                .antMatchers("/").permitAll()
-                .anyRequest().authenticated()
-                .and()
                 .formLogin()
                 .and()
                 .httpBasic();

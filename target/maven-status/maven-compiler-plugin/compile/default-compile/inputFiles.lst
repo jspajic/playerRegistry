@@ -1,4 +1,7 @@
-C:\Users\jspajic\IdeaProjects\helloWorld\src\main\java\hello\AgentController.java
+C:\Users\jspajic\IdeaProjects\helloWorld\src\main\java\hello\repository\AgentRepository.java
+C:\Users\jspajic\IdeaProjects\helloWorld\src\main\java\hello\controller\AgentController.java
+C:\Users\jspajic\IdeaProjects\helloWorld\src\main\java\hello\config\DisableCSRF.java
 C:\Users\jspajic\IdeaProjects\helloWorld\src\main\java\hello\Application.java
-C:\Users\jspajic\IdeaProjects\helloWorld\src\main\java\hello\AgentRepository.java
-C:\Users\jspajic\IdeaProjects\helloWorld\src\main\java\hello\Agents.java
+C:\Users\jspajic\IdeaProjects\helloWorld\src\main\java\hello\model\Agent.java
+C:\Users\jspajic\IdeaProjects\helloWorld\src\main\java\hello\config\CORSFilter.java
+C:\Users\jspajic\IdeaProjects\helloWorld\src\main\java\hello\config\SwaggerConfig.java
