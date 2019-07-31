@@ -1,7 +1,0 @@
-hello\config\DisableCSRF.class
-hello\model\Agent.class
-hello\config\SwaggerConfig.class
-hello\repository\AgentRepository.class
-hello\config\CORSFilter.class
-hello\Application.class
-hello\controller\AgentController.class
