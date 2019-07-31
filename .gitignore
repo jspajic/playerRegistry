@@ -1,2 +1,6 @@
 /logs
-*.log*g
+*.log*
+.idea
+helloWorld.iml
+target
+/src/test

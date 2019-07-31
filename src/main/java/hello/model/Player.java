@@ -1,24 +1,24 @@
 package hello.model;
 
 import javax.persistence.*;
-import java.util.Set;
 
-@Entity //Hibernate na osnovu ovoga pravi tablicu u bazi
-public class Agent {
-
+@Entity
+public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String username;
-    private String email;
+    private Integer age;
+    private String club;
     private String password;
+    @Column(updatable = false, insertable = false)
+    private Integer agentID;
 
-    @OneToMany(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            mappedBy = "agent")
-    private Set<Player> players;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "agentID", nullable = false)
+    private Agent agent;
     public int getId() {
         return id;
     }
@@ -43,12 +43,20 @@ public class Agent {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getClub() {
+        return club;
+    }
+
+    public void setClub(String club) {
+        this.club = club;
     }
 
     public String getPassword() {
@@ -59,5 +67,11 @@ public class Agent {
         this.password = password;
     }
 
+    public Integer getAgentID() {
+        return agentID;
+    }
 
+    public void setAgentID(Integer agentID) {
+        this.agentID = agentID;
+    }
 }

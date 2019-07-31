@@ -2,28 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="254c507a-55d8-4cf3-b973-25d3fc8f8cde" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/helloWorld.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/archived/single-logger-2019-07-23.0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/archived/single-logger-2019-07-24.0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/code-red-logger.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/single-logger.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/spring-boot-logger.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/config/DisableCSRF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/config/DisableCSRF.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/controller/AgentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/controller/AgentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/model/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/repository/AgentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/repository/AgentRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/helloWorld.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/Application$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/config/DisableCSRF.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello/config/DisableCSRF.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/config/DisableCSRF.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello/controller/AgentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/controller/AgentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gs-mysql-data-0.1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/gs-mysql-data-0.1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gs-mysql-data-0.1.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/gs-mysql-data-0.1.0.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello/model/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/model/Agent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello/repository/AgentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/repository/AgentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logback-spring.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,20 +33,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>spring-boot-starter-</find>
-      <find>thyme</find>
-      <find>vue.config.js</find>
-    </findStrings>
-    <dirStrings>
-      <dir>C:\Users\jspajic\IdeaProjects\helloWorld\src\main\logs</dir>
-      <dir>C:\Users\jspajic\IdeaProjects\helloWorld</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,14 +48,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="214" />
-    <option name="y" value="-13" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
-  </component>
   <component name="ProjectId" id="1OfsuNYrlBjCynR8kVlOuGYANTJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -83,11 +62,11 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jspajic\IdeaProjects\helloWorld" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jspajic\IdeaProjects\helloWorld\src\main\resources" />
+      <recent name="C:\Users\jspajic\IdeaProjects\helloWorld" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jspajic\IdeaProjects\helloWorld" />
     </key>
   </component>
@@ -182,7 +161,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
