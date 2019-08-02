@@ -3,7 +3,7 @@ package hello.model;
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity //Hibernate na osnovu ovoga pravi tablicu u bazi
+@Entity //Hibernate na osnovu ovoga pravi tablicu u bazi\
 public class Agent {
 
     @Id

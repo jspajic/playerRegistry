@@ -4,15 +4,16 @@ import hello.model.Player;
 
 import hello.repository.PlayerRepository;
 
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-//@RequestMapping("/api")
+@RestController
+@RequestMapping("/api")
 public class PlayerController {
     @Autowired
     private PlayerRepository playerRepo;
@@ -25,31 +26,28 @@ public class PlayerController {
     }
 
     //read
-    @ApiOperation(value = "Dohvati sve")
     @GetMapping("/players")
-    public Iterable<Player> getAllPlayers(){
-        return playerRepo.findAll();
+    @ApiOperation("Dohvati sve igrace vezane za logiranog agenta")
+    public Iterable<Player> getAll(@RequestBody Integer agentID){
+        return playerRepo.getAllPlayers(agentID);
     }
-
     //update
     @ApiOperation(value = "Uredi")
     @ApiParam(format = "application/json")
     @PutMapping("/player/edit/{id}")
-//    Agent updateAgent(@RequestBody Agent agent){
-//        return agentRepo.save(agent);
-//    }
-//    public ResponseEntity<Player> updatePlayer(@PathVariable Integer id, @RequestBody Player player){
-////        return playerRepo.findById(id)
-////                .map(record -> {
-////                    record.setName(agent.getName());
-////                    record.setArea(agent.getArea());
-////                    Agent updated = agentRepo.save(record);
-////                    return ResponseEntity.ok().body(updated);
-////                }).orElse(ResponseEntity.notFound().build());
-//    }
+    public ResponseEntity<Player> updatePlayer(@PathVariable Integer id, @RequestBody Player player){
+        return playerRepo.findById(id)
+                .map(record -> {
+                    record.setName(player.getName());
+                    record.setAge(player.getAge());
+                    record.setClub(player.getClub());
+                    record.setNet_worth(player.getNet_worth());
+                    Player updated = playerRepo.save(record);
+                    return ResponseEntity.ok().body(updated);
+                }).orElse(ResponseEntity.notFound().build());
+    }
 
     //delete
-//    @ApiOperation(value = "Izbrisi igraca")
     @DeleteMapping("/player/{id}") void deletePlayer(@PathVariable Integer id){
         playerRepo.deleteById(id);
     }

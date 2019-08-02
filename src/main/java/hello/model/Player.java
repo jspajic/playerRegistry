@@ -8,10 +8,9 @@ public class Player {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private String username;
     private Integer age;
     private String club;
-    private String password;
+    private int net_worth;
     @Column(updatable = false, insertable = false)
     private Integer agentID;
 
@@ -35,14 +34,6 @@ public class Player {
         this.name = name;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public Integer getAge() {
         return age;
     }
@@ -59,12 +50,12 @@ public class Player {
         this.club = club;
     }
 
-    public String getPassword() {
-        return password;
+    public int getNet_worth() {
+        return net_worth;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setNet_worth(int net_worth) {
+        this.net_worth = net_worth;
     }
 
     public Integer getAgentID() {

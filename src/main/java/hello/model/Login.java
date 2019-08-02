@@ -1,8 +1,12 @@
 package hello.model;
 
 public class Login {
+
+    Integer id;
     String username;
     String password;
+
+
 
     public String getUsername() {
         return username;
@@ -18,5 +22,13 @@ public class Login {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
