@@ -1,23 +1,32 @@
 package hello.model;
 
+
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+
 import javax.persistence.*;
 
 @Entity
+@Indexed
+@Table(name = "player")
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Field
     private String name;
     private Integer age;
+    @Field
     private String club;
     private int net_worth;
     @Column(updatable = false, insertable = false)
     private Integer agentID;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "agentID", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "agentID")
     private Agent agent;
+
     public int getId() {
         return id;
     }
@@ -66,3 +75,4 @@ public class Player {
         this.agentID = agentID;
     }
 }
+

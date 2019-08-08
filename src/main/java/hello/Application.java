@@ -1,13 +1,17 @@
 package hello;
 
+import hello.search.LuceneIndexConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
+@ImportResource("classpath:spring-security-config.xml")
+@Import(LuceneIndexConfig.class)
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
+
 }

@@ -1,9 +1,10 @@
 package hello.model;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity //Hibernate na osnovu ovoga pravi tablicu u bazi\
+@Table(name = "agent")
 public class Agent {
 
     @Id
@@ -14,10 +15,8 @@ public class Agent {
     private String email;
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            mappedBy = "agent")
-    private Set<Player> players;
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "agent")
+    private List<Player> player;
 
     public int getId() {
         return id;
