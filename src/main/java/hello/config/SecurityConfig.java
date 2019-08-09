@@ -12,7 +12,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-//                    .antMatchers("/swagger**", "/webjars/**", "/v2/**", "/swagger-resources/", "/swagger-resources/configuration/**").permitAll()
+                    .antMatchers("/swagger**", "/webjars/**", "/v2/**", "/swagger-resources/", "/swagger-resources/configuration/**","/api/getall").permitAll()
                     .antMatchers("/api/player","/api/player/edit/{id}").hasAuthority("WRITE_PRIVILEGES")
                     .antMatchers(HttpMethod.DELETE,"/api/player/{id}").hasAuthority("WRITE_PRIVILEGES")
                     .antMatchers(HttpMethod.POST,"/api/player").hasAuthority("WRITE_PRIVILEGES")

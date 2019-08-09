@@ -15,7 +15,7 @@ public class Agent {
     private String email;
     private String password;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "agent")
+    @OneToMany(mappedBy = "agent", cascade = CascadeType.ALL, targetEntity = Player.class)
     private List<Player> player;
 
     public int getId() {

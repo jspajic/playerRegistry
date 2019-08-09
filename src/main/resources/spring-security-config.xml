@@ -10,7 +10,7 @@
         <authentication-provider>
             <user-service>
                 <user name="korisnik"
-                      password="{noop}testnasifra"
+                      password="{noop}korisnik"
                       authorities="READ_PRIVILEGES"/>
                 <user name="admin"
                       password="{noop}sifrabroj2"

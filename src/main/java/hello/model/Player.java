@@ -1,6 +1,8 @@
 package hello.model;
 
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Indexed;
 
@@ -19,13 +21,21 @@ public class Player {
     @Field
     private String club;
     private int net_worth;
-    @Column(updatable = false, insertable = false)
+    @Column(insertable = false, updatable = false)
     private Integer agentID;
 
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "agentID")
     private Agent agent;
+
+    public Agent getAgent() {
+        return agent;
+    }
+
+    public void setAgent(Agent agent) {
+        this.agent = agent;
+    }
 
     public int getId() {
         return id;

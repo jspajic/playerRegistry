@@ -18,6 +18,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.ParameterExpression;
+import javax.persistence.criteria.Root;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,6 +34,9 @@ public class PlayerController {
 
     @Autowired
     private UserDetailsService userDetailsService;
+
+    @Autowired
+    private EntityManager entityManager;
 
     //create
     @ApiOperation(value = "Kreiraj novog")
@@ -76,12 +84,15 @@ public class PlayerController {
     //findbyID
     @ApiOperation(value = "Dohvati igraca pomocu ID-a")
     @GetMapping("/player/{id}")
-    Optional<Player> findSinglePlayer(@PathVariable Integer id){
-        return playerRepo.findById(id);
+    public String findSinglePlayer(@PathVariable Integer id){
+        Optional<Player> player = playerRepo.findById(id);
+        String agent = player.get().getAgent().getName();
+
+        return agent;
+
     }
 
-    @Autowired
-    private EntityManager entityManager;
+
 
     @ApiOperation(value = "Pretrazivanje igraca po imenu")
     @GetMapping("/search")
@@ -105,5 +116,23 @@ public class PlayerController {
         List<Player> playersMatching = fullTextQuery.getResultList();
 
         return playersMatching;
+    }
+
+    @GetMapping("/getall")
+    public List<Player> getAllPlayersForAgent(){
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+
+        CriteriaQuery<Player> q = cb.createQuery(Player.class);
+        Root<Player> c = q.from(Player.class);
+        ParameterExpression<Integer> p = cb.parameter(Integer.class);
+        q.select(c).where(cb.equal(c.get("agentID"),p));
+
+        TypedQuery<Player> query = entityManager.createQuery(q);
+        query.setParameter(p,2);
+        List<Player> results = query.getResultList();
+
+
+        return results;
+
     }
 }
