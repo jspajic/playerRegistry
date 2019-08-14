@@ -15,7 +15,7 @@ public class Agent {
     private String email;
     private String password;
 
-    @OneToMany(mappedBy = "agent", cascade = CascadeType.ALL, targetEntity = Player.class)
+    @OneToMany(mappedBy = "agent", cascade = CascadeType.ALL)
     private List<Player> player;
 
     public int getId() {

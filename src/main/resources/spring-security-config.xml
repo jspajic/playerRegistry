@@ -10,10 +10,10 @@
         <authentication-provider>
             <user-service>
                 <user name="korisnik"
-                      password="{noop}korisnik"
+                      password="{noop}testnasifra"
                       authorities="READ_PRIVILEGES"/>
                 <user name="admin"
-                      password="{noop}sifrabroj2"
+                      password="{noop}adminsifra"
                       authorities="WRITE_PRIVILEGES, READ_PRIVILEGES"/>
             </user-service>
         <!--{noop} = NoOpPasswordEncoder-->

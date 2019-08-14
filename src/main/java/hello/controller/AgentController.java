@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.constraints.NotNull;
-import java.util.Optional;
-
+import java.util.List;
 
 @RestController
 @RequestMapping("/")
@@ -24,6 +23,12 @@ public class AgentController {
     @Autowired
     private AgentRepository agentRepo;
 
+
+
+    @GetMapping("/api/agents")
+    List<Agent> findAllAgents(){
+        return agentRepo.findAll();
+    }
     @ApiOperation(value = "Kreiraj novog")
     @PutMapping("/register")
     Agent createNewAgent(@RequestBody Agent agent) {
