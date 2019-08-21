@@ -7,8 +7,10 @@ import hello.repository.AgentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.*;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,19 +18,23 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api")
 @CrossOrigin(origins = "http://localhost:4000", allowedHeaders = "*")
 public class AgentController {
 
     @Autowired
     private AgentRepository agentRepo;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
 
-    @GetMapping("/api/agents")
+    @GetMapping("/agents")
     List<Agent> findAllAgents(){
         return agentRepo.findAll();
     }
+
+
     @ApiOperation(value = "Kreiraj novog")
     @PutMapping("/register")
     Agent createNewAgent(@RequestBody Agent agent) {
@@ -37,24 +43,23 @@ public class AgentController {
         newAgent.setName(agent.getName());
         newAgent.setUsername(agent.getUsername());
         newAgent.setEmail(agent.getEmail());
-        newAgent.setPassword(agent.getPassword());
+        newAgent.setPassword(passwordEncoder.encode(agent.getPassword()));
 
         return agentRepo.save(newAgent);
     }
 
     @ApiOperation(value = "Login postojeceg korisnika")
     @PutMapping("/login")
-    public Login login(@RequestBody @NotNull Login login) {
+    public Agent login(@RequestBody @NotNull Login login) {
         Agent agent = agentRepo.findByUsername(login.getUsername());
-        login.setId(agent.getId());
         if (agent == null) {
             throw new RuntimeException("Korisnik nije pronaden.");
         }
-        if (login.getPassword() != agent.getPassword()) {
+        if(!passwordEncoder.matches(login.getPassword(), agent.getPassword())){
             throw new RuntimeException("Pogresna sifra.");
         }
 
-        return login;
+        return agent;
     }
 
 

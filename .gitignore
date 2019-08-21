@@ -8,3 +8,5 @@ target
 src/main/resources/*.sql
 /data
 Dockerfile
+/src/main/java/hello/repository/RoleRepository.java
+/src/main/java/hello/model/Role.java

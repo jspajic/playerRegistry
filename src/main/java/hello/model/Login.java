@@ -2,7 +2,6 @@ package hello.model;
 
 public class Login {
 
-    Integer id;
     String username;
     String password;
 
@@ -24,11 +23,4 @@ public class Login {
         this.password = password;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

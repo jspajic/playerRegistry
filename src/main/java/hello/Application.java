@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
-@ImportResource("classpath:spring-security-config.xml")
 @Import(LuceneIndexConfig.class)
 public class Application {
     public static void main(String[] args) {
