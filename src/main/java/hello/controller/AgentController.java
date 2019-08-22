@@ -18,7 +18,6 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
 @CrossOrigin(origins = "http://localhost:4000", allowedHeaders = "*")
 public class AgentController {
 
@@ -47,29 +46,6 @@ public class AgentController {
 
         return agentRepo.save(newAgent);
     }
-
-    @ApiOperation(value = "Login postojeceg korisnika")
-    @PutMapping("/login")
-    public Agent login(@RequestBody @NotNull Login login) {
-        Agent agent = agentRepo.findByUsername(login.getUsername());
-        if (agent == null) {
-            throw new RuntimeException("Korisnik nije pronaden.");
-        }
-        if(!passwordEncoder.matches(login.getPassword(), agent.getPassword())){
-            throw new RuntimeException("Pogresna sifra.");
-        }
-
-        return agent;
-    }
-
-
-    @RequestMapping(value = "/logout", method = RequestMethod.POST)
-    public void logout(HttpServletRequest request, HttpServletResponse response) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth != null) {
-            new SecurityContextLogoutHandler().logout(request,response,auth);
-        }
-    }
-
+    
 
 }
