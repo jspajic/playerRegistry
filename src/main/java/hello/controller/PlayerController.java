@@ -22,6 +22,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin("http://localhost:4000/")
 public class PlayerController {
     @Autowired
     private PlayerRepository playerRepo;

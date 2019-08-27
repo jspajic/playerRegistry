@@ -49,11 +49,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/swagger-resources/",
                         "/swagger-resources/configuration/**",
                         "/api/getall",
-                        "/login",
-                        "/register",
-                        "/authenticate").permitAll()
-                .antMatchers("/api/player", "/api/agents", "/api/player/edit/{id}").authenticated()
-                .antMatchers("/api/players", "/api/player/{id}", "/api/search**").authenticated()
+                        "/api/register",
+                        "/api/authenticate").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling()

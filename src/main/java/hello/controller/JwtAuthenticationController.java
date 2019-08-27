@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
+@RequestMapping("/api")
 @CrossOrigin
 public class JwtAuthenticationController {
     @Autowired
@@ -25,7 +26,7 @@ public class JwtAuthenticationController {
     @Autowired
     private JWTUserDetailsService userDetailsService;
 
-    @PostMapping("/authenticate")
+    @PutMapping("/authenticate")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
         authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
@@ -35,11 +36,6 @@ public class JwtAuthenticationController {
         final String token = jwtTokenUtil.generateToken(userDetails);
 
         return ResponseEntity.ok(new JwtResponse(token));
-    }
-
-    @GetMapping("/hello")
-    public String hello(){
-        return "Hello jozo!";
     }
 
     private void authenticate(String username, String password) throws Exception {
