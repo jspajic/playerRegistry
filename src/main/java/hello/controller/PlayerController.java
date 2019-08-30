@@ -62,11 +62,6 @@ public class PlayerController {
                 }).orElse(ResponseEntity.notFound().build());
     }
 
-//    //delete
-//    @DeleteMapping("/player/{id}")
-//    public void deletePlayer(@PathVariable("id") Integer id){
-//        playerRepo.deleteById(id);
-//    }
 
     @DeleteMapping("/player/{id}")
     public void removePlayer(@PathVariable("id")Integer id){
